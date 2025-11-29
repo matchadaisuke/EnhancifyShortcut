@@ -1,0 +1,43 @@
+name: Android Build & Release (Smartphone)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'バージョン名 (例: v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # リリースを作成するために必要
+
+    steps:
+      - name: コードを取得
+        uses: actions/checkout@v4
+
+      - name: Javaをセットアップ
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17' # 最近のAndroid開発は17が基本です
+          cache: 'gradle'
+
+      - name: Gradleの実行権限を付与
+        run: chmod +x gradlew
+
+      - name: アプリをビルド (Debug版)
+        # 署名設定が不要なDebug版を作ります
+        run: ./gradlew assembleDebug
+
+      - name: GitHub Releaseを作成してアップロード
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.version }}
+          name: Release ${{ inputs.version }}
+          files: app/build/outputs/apk/debug/*.apk
+          draft: false
+          prerelease: false
+          generate_release_notes: true
