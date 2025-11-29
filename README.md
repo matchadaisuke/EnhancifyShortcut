@@ -21,6 +21,7 @@ echo 'allow-external-apps = true' >> ~/.termux/termux.properties && termux-reloa
 @YuzuMikan404 https://github.com/YuzuMikan404/RevancifyXisrShortcut
 
 After some research, I found a pioneer who created the same shortcut.
+
 @speedlorenzo12 https://github.com/speedlorenzo12/Enhancify-Shortcut-test
 ### License
 
