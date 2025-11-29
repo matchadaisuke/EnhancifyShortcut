@@ -1,6 +1,6 @@
-# Shortcut for Revancify-Xisr
+# Shortcut for Enhancify
 
-Simple shortcut to get started with Revancify-Xisr.
+Simple shortcut to get started with Enhancify.
 
 Supported only on Android 8.0+.
 
@@ -11,12 +11,14 @@ Supported only on Android 8.0+.
 echo 'allow-external-apps = true' >> ~/.termux/termux.properties && termux-reload-settings
 ```
 2. Grant permission to "display over other apps" in termux
-3. Run Revancify App
+3. Run Enhancify App
 
 # Thanks
 @inotia00 https://github.com/inotia00/RevancifyShortcut
 
-@Xisrr1 https://github.com/Xisrr1/Revancify-Xisr
+@Graywizard888 https://github.com/Graywizard888/Enhancify
+
+@YuzuMikan404 https://github.com/YuzuMikan404/RevancifyXisrShortcut
 
 ### License
 
